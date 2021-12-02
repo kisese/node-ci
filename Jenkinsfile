@@ -8,9 +8,9 @@ pipeline{
     stages {
         stage('Build'){
            steps{
-              script{
-                sh 'npm install'
-              } 
+                nodejs(nodeJSInstallationName: 'node') {
+                    sh 'npm install'
+                }
            }   
         }
         stage('Building image') {
